@@ -1,0 +1,57 @@
+[Bandit]
+Host: bandit.labs.overthewire.org
+Acc: bandit<X> X = level
+Passwords
++Level 0: bandit0
++Level 1: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
++Level 2: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
++Level 3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
++Level 4: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
++Level 5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh (human readable file?)
+*Note cmd: find -exec file {} \ ;
+
++Level 6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+*Note cmd: find -size 1033c -exec file {} \; 
+c = byte, b = block; {}: current file name, -exec: execute cnd
+\: escape from shell
+
+'find' syntax: find location comparison-criteria search-term
+
+http://www.binarytides.com/linux-find-command-examples/
+http://linuxexchange.org/questions/2900/unix-commands-find-help
+
++Level 7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+*Note cmd: find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+( 2>/dev/null: xoa nhung dong bao loi permission denied)
+
++Level 8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+*Note cmd: vi => :/[pattern]
+
++Level 9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+*Note cmd: grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+
+=> sort file.txt | uniq -c | sort -nr
+("uniq only counts adjacent repeat lines" => sort first then uniq later
+sort, uniq count, sort by number with reverse order!)
+
+grep   - search the contents of a text file, 
+and print lines containing a given word or pattern.
+
+http://unix.stackexchange.com/questions/5490/count-how-many-times-each-line-appears-in-a-file
+
++Level 10: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+*Note cmd: strings data.txt | grep '[=]'
+Strings (find readable string in binayry files)
+
++Level 11: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+*Note cmd: cat data.txt | base64 -d
+Based 64 encode data => ASCII
+
++Level 12: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+*Note cmd:  cat data.txt | tr [A-Za-z] [N-ZA-Mn-za-m]
+ROT13
+Input	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+Output	NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm
+
+
