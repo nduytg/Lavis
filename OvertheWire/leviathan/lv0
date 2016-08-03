@@ -1,4 +1,4 @@
-leviathan0@melinda:~$ ls -li
+leviathan0@melinda:~$ ls -lia
 total 24
 156510 drwxr-xr-x   3 root       root       4096 Nov 14  2014 .
   8193 drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
